@@ -12,18 +12,12 @@ var semver = require('semver');
 
 module.exports = function(grunt) {
 
-  /**
-   * Failed.
-   */
   function fail(message, error) {
     if (error) grunt.log.error(error);
     grunt.fail.warn(message || 'Task failed.');
   }
 
-  /**
-   * Register task.
-   */
-  grunt.registerMultiTask('funky_cleanv', 'Clean versioned files.', function() {
+  grunt.registerMultiTask('funky_cleanv', function() {
     var opts = this.options({
       keep: 10
     });
@@ -49,6 +43,7 @@ module.exports = function(grunt) {
         return (semver.gt(av[0], bv[0])) ? 1 : -1;
       });
 
+      // Delete old files
       var take = filepaths.length - opts.keep;
       filepaths.slice(0, take).forEach(function(filepath) {
         grunt.file['delete'](filepath);
