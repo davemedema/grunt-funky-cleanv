@@ -1,11 +1,3 @@
-/*
- * grunt-clean-min
- * https://github.com/davemedema/grunt-clean-min
- *
- * Copyright (c) 2013 Dave Medema
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 module.exports = function(grunt) {
@@ -26,33 +18,25 @@ module.exports = function(grunt) {
     // `funky_cleanv`
     funky_cleanv: {
       keep_default: {
-        files: [
-          {
-            expand: true,
-            src: ['tmp/keep_default.*.js']
-          }
-        ]
+        src: ['tmp/keep_default.*.js'],
+        expand: true
       },
       keep_five: {
         options: {
           keep: 5
         },
-        files: [
-          {
-            expand: true,
-            src: ['tmp/keep_five.*.js']
-          }
-        ]
+        src: ['tmp/keep_five.*.js'],
+        expand: true
       },
-      multiple_src_mappings: {
+      multiple_src_dest: {
         files: [
           {
-            expand: true,
-            src: ['tmp/multiple_src_mappings_one.*.js']
+            src: ['tmp/multiple_src_dest_one.*.js'],
+            expand: true
           },
           {
-            expand: true,
-            src: ['tmp/multiple_src_mappings_two.*.js']
+            src: ['tmp/multiple_src_dest_two.*.js'],
+            expand: true
           }
         ]
       }
@@ -106,8 +90,8 @@ module.exports = function(grunt) {
       var version = '1.0.' + i;
       grunt.file.write('tmp/keep_default.' + version + '.js');
       grunt.file.write('tmp/keep_five.' + version + '.js');
-      grunt.file.write('tmp/multiple_src_mappings_one.' + version + '.js');
-      grunt.file.write('tmp/multiple_src_mappings_two.' + version + '.js');
+      grunt.file.write('tmp/multiple_src_dest_one.' + version + '.js');
+      grunt.file.write('tmp/multiple_src_dest_two.' + version + '.js');
     }
     grunt.log.ok();
   });

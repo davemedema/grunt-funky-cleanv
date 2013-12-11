@@ -46,11 +46,11 @@ exports.all_test = {
     test.done();
   },
 
-  multiple_src_mappings: function(test) {
-    var pattern1 = 'tmp/multiple_src_mappings_one.*.js';
+  multiple_src_dest: function(test) {
+    var pattern1 = 'tmp/multiple_src_dest_one.*.js';
     var actual1 = grunt.file.expand(pattern1);
 
-    var pattern2 = 'tmp/multiple_src_mappings_two.*.js';
+    var pattern2 = 'tmp/multiple_src_dest_two.*.js';
     var actual2 = grunt.file.expand(pattern2);
 
     test.expect(1);
