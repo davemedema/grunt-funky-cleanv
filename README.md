@@ -1,3 +1,3 @@
 # grunt-funky-cleanv
 
-> Clean versioned files.
+Clean versioned files.
