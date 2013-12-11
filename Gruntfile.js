@@ -15,8 +15,8 @@ module.exports = function(grunt) {
       all: ['tmp']
     },
 
-    // `funky_cleanv`
-    funky_cleanv: {
+    // `cleanv`
+    cleanv: {
       keep_default: {
         src: ['tmp/keep_default.*.js'],
         expand: true
@@ -78,11 +78,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('release', function(type) {
     grunt.task.run('test');
-    grunt.task.run('funky_bump:' + (type || 'patch'));
-    grunt.task.run('funky_tag');
+    grunt.task.run('bump:' + (type || 'patch'));
+    grunt.task.run('tag');
   });
 
-  grunt.registerTask('test', ['clean', 'jshint', 'test_fixtures', 'funky_cleanv', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'jshint', 'test_fixtures', 'cleanv', 'nodeunit']);
   grunt.registerTask('t', ['test']);
 
   grunt.registerTask('test_fixtures', function() {

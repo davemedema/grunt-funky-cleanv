@@ -20,7 +20,7 @@ module.exports = function(grunt) {
   var utils = require('funky-grunt-utils')(grunt);
 
   // Register task
-  grunt.registerMultiTask('funky_cleanv', function() {
+  grunt.registerMultiTask('cleanv', function() {
     var opts = this.options({
       keep: 10
     });
