@@ -1,7 +1,7 @@
 {
   "name": "grunt-funky-cleanv",
   "description": "Clean versioned files.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/davemedema/grunt-funky-cleanv",
   "author": {
     "name": "Dave Medema",
