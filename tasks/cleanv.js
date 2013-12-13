@@ -17,8 +17,6 @@ var semver = require('semver');
  */
 module.exports = function(grunt) {
 
-  var utils = require('funky-grunt-utils')(grunt);
-
   // register task
   grunt.registerMultiTask('cleanv', function() {
     var opts = this.options({
