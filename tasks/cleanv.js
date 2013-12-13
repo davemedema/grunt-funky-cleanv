@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
   var utils = require('funky-grunt-utils')(grunt);
 
-  // Register task
+  // register task
   grunt.registerMultiTask('cleanv', function() {
     var opts = this.options({
       keep: 10
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       return;
     }
 
-    // Build filepaths
+    // build filepaths
     var filepaths = [];
 
     this.files.forEach(function(fm) {
@@ -42,21 +42,21 @@ module.exports = function(grunt) {
       });
     });
 
-    // Sort filepaths
+    // sort filepaths
     filepaths.sort(function(a, b) {
       var av = a.match(regexp);
       var bv = b.match(regexp);
       return (semver.gt(av[0], bv[0])) ? 1 : -1;
     });
 
-    // Delete old files
+    // delete old files
     var take = filepaths.length - opts.keep;
     filepaths.slice(0, take).forEach(function(filepath) {
       grunt.file['delete'](filepath);
       cleaned++;
     });
 
-    // Inform
+    // inform
     grunt.log.ok(cleaned + ' file(s) cleaned.');
   });
 
